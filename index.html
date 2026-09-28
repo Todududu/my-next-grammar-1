@@ -1,0 +1,808 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<meta name="description" content="Bài giảng tiếng Việt 24 bài My Next Grammar 1">
+<title>My Next Grammar 1 tiếng Việt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+</head><body>
+<style>
+:root{
+  --bg:#F2F5FA; --paper:#FFFFFF; --ink:#172039; --muted:#5A6580; --line:#D8DFEB;
+  --accent:#2344C4; --accent-ink:#FFFFFF; --accent-soft:#E7ECFE;
+  --hl:rgba(255,222,77,.75); --ok:#1B7F47; --ok-soft:#E3F4EA; --bad:#BD3535; --bad-soft:#FBE8E8;
+  --tip:#FFF7D6; --tip-line:#E8CF63;
+  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E1322; --paper:#161E33; --ink:#E6EBF6; --muted:#9BA6BF; --line:#2A3553;
+    --accent:#93A9FF; --accent-ink:#0E1322; --accent-soft:#212D55;
+    --hl:rgba(255,214,64,.30); --ok:#5ACB8A; --ok-soft:#173526; --bad:#FF8C8C; --bad-soft:#3A1E24;
+    --tip:#2A2715; --tip-line:#6E6127;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E1322; --paper:#161E33; --ink:#E6EBF6; --muted:#9BA6BF; --line:#2A3553;
+  --accent:#93A9FF; --accent-ink:#0E1322; --accent-soft:#212D55;
+  --hl:rgba(255,214,64,.30); --ok:#5ACB8A; --ok-soft:#173526; --bad:#FF8C8C; --bad-soft:#3A1E24;
+  --tip:#2A2715; --tip-line:#6E6127;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:270px minmax(0,1fr);gap:32px;align-items:start}
+header.top{max-width:1180px;margin:0 auto;padding-block:28px 20px;display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px}
+.brand h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,40px);line-height:1.05;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.brand h1 span{color:var(--accent)}
+.brand p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.navtoggle{display:none;font:600 15px var(--body);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+/* sidebar */
+nav.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);max-height:calc(100vh - 32px);overflow:auto;padding-right:4px}
+nav.side a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);padding:6px 10px;border-radius:8px;font-size:14.5px;line-height:1.35}
+nav.side a:hover{background:var(--accent-soft)}
+nav.side a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+nav.side a .n{font-family:var(--display);font-weight:700;min-width:22px;font-variant-numeric:tabular-nums;opacity:.8}
+nav.side a .done{margin-left:auto;font-size:12px;color:var(--ok);font-weight:700}
+nav.side a[aria-current="page"] .done{color:var(--accent-ink)}
+nav.side .grp{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:18px 10px 4px}
+nav.side .grp:first-child{margin-top:0}
+/* main */
+main{min-width:0}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3.5vw,40px)}
+.eyebrow{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+h2.lt{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.2vw,44px);line-height:1.05;margin:6px 0 4px;text-wrap:balance}
+.en{color:var(--muted);font-size:16px;margin:0 0 18px}
+.refs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.chip{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted);background:var(--bg);font-variant-numeric:tabular-nums}
+h3{font-family:var(--display);font-weight:700;font-size:23px;margin:34px 0 10px;line-height:1.2;text-wrap:balance}
+h4{font-size:16px;margin:22px 0 6px;font-weight:700}
+p{margin:0 0 10px;max-width:70ch}
+ul.goals{margin:0;padding-left:20px}
+ul.goals li{margin:2px 0}
+.hl{background:linear-gradient(transparent 38%,var(--hl) 38%,var(--hl) 92%,transparent 92%);padding:0 2px;border-radius:2px}
+.tw{overflow-x:auto;margin:10px 0 14px;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:8px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+th{background:var(--accent-soft);font-weight:700;font-size:13.5px;letter-spacing:.02em}
+td b,li b,p b{font-weight:700}
+.ex{font-style:italic}
+.tip{background:var(--tip);border:1px solid var(--tip-line);border-radius:12px;padding:12px 16px;margin:12px 0}
+.tip strong{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.tip ul{margin:0;padding-left:20px}
+.mist{display:grid;gap:8px;margin:8px 0}
+.mist div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 14px;border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.mist .w{color:var(--bad);text-decoration:line-through;text-decoration-thickness:1.5px}
+.mist .r{color:var(--ok);font-weight:600}
+.mist .why{grid-column:1/-1;color:var(--muted);font-size:14.5px}
+.words{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}
+.words span{border:1px solid var(--line);border-radius:8px;padding:2px 9px;font-size:14.5px;background:var(--bg)}
+/* quiz */
+.quiz{border:2px solid var(--accent);border-radius:14px;padding:18px clamp(14px,2.5vw,24px);margin-top:12px}
+.qi{display:grid;grid-template-columns:28px minmax(0,1fr);gap:4px 10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.qi:last-of-type{border-bottom:none}
+.qi .num{font-family:var(--display);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.qi .qt{margin-bottom:6px}
+.qi input[type=text]{font:500 16px var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:6px 10px;width:min(260px,100%)}
+.qi input:focus-visible,.opt:focus-visible,button:focus-visible,nav.side a:focus-visible,.navtoggle:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font:500 15px var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;text-align:left}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.qi.ok input,.qi.ok .opt[aria-pressed="true"]{border-color:var(--ok);background:var(--ok-soft)}
+.qi.bad input,.qi.bad .opt[aria-pressed="true"]{border-color:var(--bad);background:var(--bad-soft)}
+.fb{grid-column:2;font-size:14px;min-height:0}
+.qi.ok .fb{color:var(--ok)} .qi.bad .fb{color:var(--bad)}
+.qbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.btn{font:600 15px var(--body);border-radius:10px;padding:9px 16px;cursor:pointer;border:1.5px solid var(--accent)}
+.btn.pri{background:var(--accent);color:var(--accent-ink)}
+.btn.sec{background:transparent;color:var(--accent)}
+.score{font-weight:700;font-variant-numeric:tabular-nums}
+.steps{margin:0;padding-left:22px}
+.steps li{margin:6px 0}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:22px;flex-wrap:wrap}
+.pager a{text-decoration:none;color:var(--accent);font-weight:600;border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:10px 14px;max-width:48%}
+.pager a:hover{border-color:var(--accent)}
+.pager small{display:block;color:var(--muted);font-weight:500;font-size:12.5px}
+/* home */
+.books{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:12px 0}
+.book{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--bg)}
+.book h4{margin:0 0 4px;font-family:var(--display);font-size:19px}
+.book p{font-size:14.5px;margin:0}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:10px 0}
+.map a{display:flex;gap:10px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--paper);line-height:1.3}
+.map a:hover{border-color:var(--accent)}
+.map a .n{font-family:var(--display);font-weight:800;font-size:22px;color:var(--accent);min-width:28px;font-variant-numeric:tabular-nums;line-height:1}
+.map a small{display:block;color:var(--muted);font-size:12.5px}
+.map a.test{background:var(--accent-soft)}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:16px}
+  .navtoggle{display:inline-block}
+  nav.side{position:static;max-height:none;display:none;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px}
+  nav.side.open{display:block}
+  .mist div{grid-template-columns:1fr}
+  .pager a{max-width:100%;flex:1 1 100%}
+}
+@media (prefers-reduced-motion:no-preference){ .sheet{animation:in .25s ease-out} @keyframes in{from{transform:translateY(4px)}to{transform:none}} }
+</style>
+
+<header class="top">
+  <div class="brand">
+    <h1>My Next Grammar <span>1</span></h1>
+    <p>Bài giảng tiếng Việt cho 24 bài, tổng hợp từ Sách học sinh, Sách bài tập và Sách giáo viên</p>
+  </div>
+  <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="side">☰ Danh sách bài</button>
+</header>
+<div class="wrap">
+  <nav class="side" id="side" aria-label="Danh sách bài"></nav>
+  <main id="main" aria-live="polite"></main>
+</div>
+
+<script>
+/* ---------- helpers ---------- */
+const T=(head,rows)=>`<div class="tw"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const W=arr=>`<div class="words">${arr.map(w=>`<span>${w}</span>`).join('')}</div>`;
+const H=s=>`<span class="hl">${s}</span>`;
+
+const UNITS={A:"Danh từ và đại từ",B:"Động từ",C:"Kiểm tra",D:"Động từ nâng cao và trợ động từ",E:"Tính từ và trạng từ",F:"Giới từ",G:"Cấu trúc câu"};
+
+/* ---------- 24 lessons ---------- */
+const L=[
+{n:1,u:"A",vi:"Danh từ số ít và số nhiều",en:"Singular and Plural Nouns",sb:6,wb:8,
+goals:["Phân biệt danh từ chung và danh từ riêng","Đổi danh từ từ số ít sang số nhiều","Dùng đúng mạo từ a / an"],
+body:`
+<h4>A. Danh từ chung và danh từ riêng</h4>
+<p>Danh từ là từ gọi tên ${H("người, con vật, nơi chốn, đồ vật")}.</p>
+${T(["Loại","Ví dụ","Ghi nhớ"],[
+["Danh từ chung","boy, city, book, river","Tên gọi chung, phần lớn danh từ thuộc loại này"],
+["Danh từ riêng","John, Paris, Disneyland, Ha Noi","Tên riêng của một người, một nơi, một vật cụ thể. "+H("Luôn viết hoa chữ cái đầu")]])}
+<h4>B. Cách đổi sang số nhiều</h4>
+<p>Số ít là <b>một</b>. Số nhiều là <b>hai trở lên</b>.</p>
+${T(["Quy tắc","Số ít → số nhiều"],[
+["Hầu hết danh từ: thêm <b>-s</b>","cat → cats, horse → horses, book → books"],
+["Tận cùng <b>-ch, -sh, -s, -x</b>: thêm <b>-es</b>","bench → benches, dish → dishes, bus → buses, box → boxes"],
+["<b>Phụ âm + y</b>: đổi y thành i rồi thêm <b>-es</b>","baby → babies, country → countries, story → stories"],
+["<b>Nguyên âm + y</b>: chỉ thêm -s","boy → boys, day → days, key → keys"],
+["Bất quy tắc: phải học thuộc","man → men, woman → women, child → children, person → people, foot → feet, tooth → teeth, mouse → mice"]])}
+<h4>C. A hay An?</h4>
+<p>A / an đứng trước danh từ <b>số ít</b>, nghĩa là “một”.</p>
+${T(["Dùng","Khi nào","Ví dụ"],[
+["<b>a</b>","Từ đứng ngay sau bắt đầu bằng "+H("phụ âm"),"a pen, a radio, a small umbrella"],
+["<b>an</b>","Từ đứng ngay sau bắt đầu bằng "+H("nguyên âm a, e, i, o, u"),"an orange, an egg, an interesting book"]])}`,
+tips:["Xét chữ cái đầu của <b>từ đứng ngay sau</b> a/an, không phải của danh từ: <i>an umbrella</i> nhưng <i>a small umbrella</i>.","Học danh từ bất quy tắc theo cặp, đọc to: “one child, two children; one foot, two feet”."],
+mist:[["two childs","two children","child là danh từ bất quy tắc"],["a apple","an apple","apple bắt đầu bằng nguyên âm a"],["three boies","three boys","boy tận cùng là nguyên âm + y nên chỉ thêm -s"],["paris","Paris","Danh từ riêng luôn viết hoa"]],
+home:"Chỉ vào đồ vật trong nhà, con nói “a …” hoặc “an …”, rồi đổi sang số nhiều: “a cup → two cups”.",
+ex:[{q:"one box → two ___",a:["boxes"]},{q:"one baby → three ___",a:["babies"]},{q:"one tooth → many ___",a:["teeth"]},{q:"one boy → two ___",a:["boys"]},{q:"I eat ___ apple every day.",o:["a","an"],a:1},{q:"She has ___ new bike.",o:["a","an"],a:0},{q:"Từ nào là danh từ riêng?",o:["city","London","river"],a:1},{q:"one person → five ___",a:["people"]}]},
+
+{n:2,u:"A",vi:"Danh từ đếm được và không đếm được",en:"Count and Noncount Nouns",sb:10,wb:12,
+goals:["Nhận biết danh từ đếm được và không đếm được","Dùng some trong câu khẳng định","Dùng any trong câu phủ định và câu hỏi"],
+body:`
+<h4>A. Đếm được và không đếm được</h4>
+${T(["Loại","Số ít","Số nhiều","Ghi nhớ"],[
+["Đếm được","a cookie, a bus, one leaf","cookies, buses, leaves","Đếm bằng số được, có cả dạng số ít và số nhiều"],
+["Không đếm được","water, cheese, juice","(không có)",H("Chỉ có dạng số ít")+", không dùng a / an"]])}
+<p>Danh từ không đếm được hay gặp:</p>
+${W(["furniture (đồ đạc)","homework (bài tập về nhà)","mail (thư)","money (tiền)","bread (bánh mì)","milk (sữa)","weather (thời tiết)","music (âm nhạc)","information (thông tin)"])}
+<h4>B. Some: một vài, một ít</h4>
+${T(["Ví dụ","Cách dùng"],[
+["There are <b>some</b> sandwiches.","Với danh từ số nhiều đếm được"],
+["There is <b>some</b> milk.","Với danh từ không đếm được"],
+["I have <b>some</b> money.","Dùng trong "+H("câu khẳng định")],
+["Can I have <b>some</b> water?","Dùng trong câu hỏi khi mời hoặc xin"]])}
+<p>Với danh từ <b>số ít đếm được</b> thì dùng a / an: <i>There is a sandwich. There is an egg.</i></p>
+<h4>C. Any: nào, chút nào</h4>
+${T(["Ví dụ","Cách dùng"],[
+["I don't have <b>any</b> brothers.","Câu phủ định"],
+["There aren't <b>any</b> apples.","Câu phủ định"],
+["Is there <b>any</b> juice?","Câu hỏi"],
+["Do you have <b>any</b> homework?","Câu hỏi"]])}`,
+tips:["Nhớ nhanh: <b>some</b> cho câu khẳng định, <b>any</b> cho câu phủ định và câu hỏi.","Tiếng Việt nói “những thông tin”, “các bài tập” nhưng tiếng Anh không thêm -s: information, homework."],
+mist:[["a lot of homeworks","a lot of homework","homework không đếm được"],["I need an information.","I need some information.","Không dùng a/an với danh từ không đếm được"],["I don't have some money.","I don't have any money.","Câu phủ định dùng any"]],
+home:"Mở tủ lạnh, con nói: “There is some milk. There aren't any eggs.”",
+ex:[{q:"We have a lot of ___.",o:["homework","homeworks"],a:0},{q:"I don't have ___ money.",o:["some","any"],a:1},{q:"There are ___ eggs in the fridge.",o:["some","any"],a:0},{q:"Is there ___ milk in the glass?",o:["a","an","any"],a:2},{q:"I have ___ umbrella.",o:["a","an","some"],a:1},{q:"Từ nào KHÔNG đếm được?",o:["pencil","bread","chair"],a:1},{q:"Can I have ___ information, please?",o:["an","some"],a:1}]},
+
+{n:3,u:"A",vi:"Đại từ chủ ngữ và đại từ tân ngữ",en:"Subject and Object Pronouns",sb:14,wb:16,
+goals:["Xác định chủ ngữ và tân ngữ trong câu","Dùng đúng đại từ chủ ngữ I, you, he, she, it, we, they","Dùng đúng đại từ tân ngữ me, you, him, her, it, us, them"],
+body:`
+<h4>A. Chủ ngữ và tân ngữ</h4>
+${T(["","Vị trí","Ví dụ"],[
+["Chủ ngữ (S)","Thường đứng "+H("đầu câu")+", trước động từ","<b>The boy</b> sees the girl. <b>He</b> is a boy."],
+["Tân ngữ (O)","Đứng "+H("sau động từ"),"The girl has <b>a puppy</b>. She loves <b>it</b>."]])}
+<h4>B và C. Bảng đại từ</h4>
+${T(["Ngôi","Chủ ngữ","Tân ngữ","Ví dụ"],[
+["Ngôi 1 số ít","I","me","Mary likes <b>me</b>."],
+["Ngôi 2","you","you","Mary likes <b>you</b>."],
+["Ngôi 3 số ít (nam)","he","him","Mary likes <b>him</b>."],
+["Ngôi 3 số ít (nữ)","she","her","Mary likes <b>her</b>."],
+["Ngôi 3 số ít (vật, con vật)","it","it","Mary likes <b>it</b>."],
+["Ngôi 1 số nhiều","we","us","Mary likes <b>us</b>."],
+["Ngôi 3 số nhiều","they","them","Mary likes <b>them</b>."]])}
+<p>Đại từ dùng để thay cho danh từ, tránh lặp lại: <i>Jack is from Canada. <b>He</b> speaks English.</i> (He = Jack) · <i>Sam is my friend. I like <b>him</b>.</i> (him = Sam)</p>`,
+tips:["Hỏi “Ai làm?” để tìm chủ ngữ, hỏi “làm cái gì / làm ai?” để tìm tân ngữ.","Sau động từ và sau giới từ (with, for, to) luôn dùng đại từ tân ngữ: <i>play with <b>me</b></i>, <i>for <b>them</b></i>."],
+mist:[["Mary likes he.","Mary likes him.","Sau động từ phải dùng tân ngữ"],["Him is my brother.","He is my brother.","Đầu câu phải dùng chủ ngữ"],["Tom and Lan are here. He are happy.","They are happy.","Hai người thì dùng they"]],
+home:"Cha mẹ nói một câu có tên người, con nói lại bằng đại từ: “I love Grandma.” → “I love her.”",
+ex:[{q:"Tom is my friend. I like ___ very much.",a:["him"]},{q:"Lan and I are classmates. ___ sit together.",a:["we"]},{q:"This cake is for you. Do you like ___?",a:["it"]},{q:"Please help ___! I can't open the door.",o:["I","me"],a:1},{q:"My sister loves cats. ___ has two cats.",a:["she"]},{q:"The kids are in the park. Can you see ___?",a:["them"]}]},
+
+{n:4,u:"A",vi:"Từ chỉ định và sở hữu cách",en:"Demonstratives and Possessives 1",sb:18,wb:20,
+goals:["Dùng this, that, these, those theo khoảng cách và số lượng","Phân biệt đại từ chỉ định và tính từ chỉ định","Viết sở hữu cách ’s và s’"],
+body:`
+<h4>A. This, that, these, those</h4>
+${T(["","Ở gần","Ở xa"],[["Số ít","<b>this</b> (cái này)","<b>that</b> (cái kia)"],["Số nhiều","<b>these</b> (những cái này)","<b>those</b> (những cái kia)"]])}
+${T(["Cách dùng","Ví dụ"],[
+["Đại từ chỉ định: "+H("đứng một mình"),"<b>This</b> is Sam's dog. I like <b>these</b>. I want <b>those</b>."],
+["Tính từ chỉ định: "+H("đứng trước danh từ"),"<b>This</b> dog is smart. <b>Those</b> books are difficult."]])}
+<p>Đổi số ít sang số nhiều phải đổi cả câu: <i>This is a red pen. → These are red pens.</i> · <i>That is my brother. → Those are my brothers.</i></p>
+<h4>B. Sở hữu cách: “của ai”</h4>
+${T(["Danh từ","Cách viết","Ví dụ"],[
+["Số ít","thêm <b>’s</b>","my friend<b>'s</b> bike, the child<b>'s</b> bag, Mike<b>'s</b> dog"],
+["Số nhiều có -s","chỉ thêm <b>’</b>","my friends<b>'</b> class, the girls<b>'</b> dresses"],
+["Số nhiều bất quy tắc","thêm <b>’s</b>","the children<b>'s</b> uniforms, women<b>'s</b> shirts"]])}`,
+tips:["Trật tự ngược với tiếng Việt: “xe đạp <b>của Nam</b>” → <b>Nam's</b> bike (người sở hữu đứng trước).","this/that đi với is; these/those đi với are."],
+mist:[["These is my pen.","This is my pen.","this đi với danh từ số ít và is"],["the girls's room","the girls' room","Số nhiều có -s chỉ thêm dấu ’"],["the childrens' toys","the children's toys","children không có -s nên thêm ’s"]],
+home:"Chơi trò chỉ đồ: vật gần con nói this/these, vật xa nói that/those.",
+ex:[{q:"___ is my pen. (đang cầm trên tay)",o:["This","These","Those"],a:0},{q:"Look at ___ birds in the sky!",o:["this","that","those"],a:2},{q:"___ shoes are new. (đang mang dưới chân)",o:["These","This","That"],a:0},{q:"the bike of Nam → ___ bike",a:["nam's"]},{q:"the room of the girls → the ___ room",a:["girls'"]},{q:"the toys of the children → the ___ toys",a:["children's"]},{q:"That is a cat. → ___ are cats.",a:["those"]}]},
+
+{n:5,u:"A",vi:"Tính từ sở hữu và đại từ sở hữu",en:"Possessives 2",sb:22,wb:24,
+goals:["Dùng tính từ sở hữu trước danh từ","Dùng đại từ sở hữu đứng một mình","Hỏi về người sở hữu với Whose"],
+body:`
+<h4>A. Tính từ sở hữu + danh từ</h4>
+<p>Tính từ sở hữu ${H("luôn đứng trước danh từ")}: my dog, our house, their uniforms.</p>
+<h4>B. Đại từ sở hữu: đứng một mình</h4>
+<p>Đại từ sở hữu = tính từ sở hữu + danh từ. Ví dụ: <i>mine = my backpack</i>.</p>
+${T(["Đại từ chủ ngữ","Tính từ sở hữu","Đại từ sở hữu","Ví dụ"],[
+["I","my","mine","This is <b>my</b> bag. This bag is <b>mine</b>."],
+["you","your","yours","This is <b>your</b> book. It is <b>yours</b>."],
+["he","his","his","This is <b>his</b> camera. It is <b>his</b>."],
+["she","her","hers","This is <b>her</b> computer. It is <b>hers</b>."],
+["it","its","(ít dùng)","A giraffe has a long neck. <b>Its</b> legs are long too."],
+["we","our","ours","This is <b>our</b> house. It is <b>ours</b>."],
+["they","their","theirs","This is <b>their</b> car. It is <b>theirs</b>."]])}
+<h4>Whose: của ai?</h4>
+<p><i><b>Whose</b> book is this?</i> → <i>It's my book.</i> hoặc <i>It's mine.</i> · <i><b>Whose</b> pencils are these?</i> → <i>They're Tom's.</i></p>`,
+tips:["<b>its</b> (của nó) khác <b>it's</b> (= it is). Nếu thay bằng “it is” mà câu vẫn đúng thì mới viết it's.","Đại từ sở hữu không bao giờ có danh từ theo sau: nói <i>It's mine</i>, không nói <i>It's mine book</i>."],
+mist:[["This is mine book.","This is my book.","Trước danh từ dùng tính từ sở hữu"],["The dog wags it's tail.","The dog wags its tail.","its = của nó"],["Who's bag is this?","Whose bag is this?","Whose = của ai; Who's = Who is"]],
+home:"Cầm một món đồ của người trong nhà, hỏi “Whose … is this?”. Con trả lời hai cách: “It's Dad's.” / “It's his.”",
+ex:[{q:"I have a dog. ___ dog is white.",a:["my"]},{q:"This bag is Lan's. It is ___.",a:["hers"]},{q:"We have a garden. The garden is ___.",a:["ours"]},{q:"___ pencil is this? — It's Minh's.",a:["whose"]},{q:"The cat is eating ___ food.",o:["its","it's"],a:0},{q:"Is this your book? — Yes, it's ___.",a:["mine"]},{q:"The students love ___ teacher.",a:["their"]}]},
+
+{n:6,u:"B",vi:"Động từ Be ở hiện tại",en:"Present Simple: Be",sb:26,wb:28,
+goals:["Dùng am, is, are đúng với chủ ngữ","Viết câu phủ định và dạng viết tắt","Đặt và trả lời câu hỏi Yes/No với Be","Dùng There is / There are"],
+body:`
+<h4>A. Khẳng định và phủ định</h4>
+${T(["Chủ ngữ","Khẳng định","Phủ định","Viết tắt"],[
+["I","am","am not","I'm / I'm not"],
+["He / She / It","is","is not","he's / he isn't"],
+["You / We / They","are","are not","we're / we aren't"]])}
+<h4>B. Câu hỏi Yes/No</h4>
+<p>Đưa ${H("Be lên trước chủ ngữ")}: <i>You are tired. → <b>Are</b> you tired?</i></p>
+${T(["Câu hỏi","Trả lời có","Trả lời không"],[
+["Am I …?","Yes, you are.","No, you aren't."],
+["Are you …?","Yes, I am.","No, I'm not."],
+["Is he / she / it …?","Yes, he is.","No, he isn't."],
+["Are we / you / they …?","Yes, they are.","No, they aren't."]])}
+<p>Khi trả lời “Yes” <b>không</b> viết tắt: <i>Yes, we are.</i> (không nói <i>Yes, we're.</i>)</p>
+<h4>C. There is / There are: “có”</h4>
+${T(["","Khẳng định","Phủ định","Câu hỏi"],[
+["Danh từ số ít, không đếm được","There <b>is</b> a book. / some milk.","There <b>isn't</b> a book. / any milk.","<b>Is</b> there a book? / any milk?"],
+["Danh từ số nhiều","There <b>are</b> some pens.","There <b>aren't</b> any pens.","<b>Are</b> there any pens?"]])}`,
+tips:["Nhớ: I đi với <b>am</b>, số ít đi với <b>is</b>, số nhiều và you đi với <b>are</b>.","Tiếng Việt “có” trong “Trên bàn có ba quyển sách” dịch là <b>There are</b>, không dùng have."],
+mist:[["I is a student.","I am a student.","I luôn đi với am"],["Yes, I'm.","Yes, I am.","Không viết tắt khi trả lời Yes"],["There is three books.","There are three books.","Danh từ số nhiều đi với are"],["On the table have a cup.","There is a cup on the table.","Dùng There is để nói “có”"]],
+home:"Tả phòng của con: “There is a bed. There are two pillows. There isn't a TV.”",
+ex:[{q:"I ___ a student.",a:["am"]},{q:"My parents ___ at work.",a:["are"]},{q:"It ___ cold today.",a:["is"]},{q:"She is tired. → She ___ tired. (phủ định)",a:["isn't","is not"]},{q:"___ you ten years old? — Yes, I am.",a:["are"]},{q:"There ___ three books on the desk.",o:["is","are"],a:1},{q:"There ___ some juice in the glass.",o:["is","are"],a:0},{q:"Is he your brother? — Yes, ___.",o:["he's","he is"],a:1}]},
+
+{n:7,u:"B",vi:"Thì hiện tại đơn",en:"Present Simple",sb:30,wb:32,
+goals:["Chia động từ thêm -s / -es với he, she, it","Viết câu phủ định với don't / doesn't","Đặt câu hỏi với Do / Does"],
+body:`
+<h4>A. Khẳng định và phủ định</h4>
+${T(["Chủ ngữ","Khẳng định","Phủ định"],[
+["I / You / We / They, danh từ số nhiều","Students <b>read</b>.","Babies <b>don't read</b>."],
+["He / She / It, danh từ số ít","A student <b>reads</b>.","A baby <b>doesn't read</b>."]])}
+<p>Phủ định: ${H("don't / doesn't + động từ nguyên mẫu")}. (don't = do not, doesn't = does not)</p>
+<h4>B. Quy tắc thêm -s / -es</h4>
+${T(["Quy tắc","Ví dụ"],[
+["Hầu hết động từ: thêm <b>-s</b>","speak → speaks, open → opens, take → takes"],
+["Tận cùng <b>-ch, -sh, -s, -x</b> (và -o): thêm <b>-es</b>","watch → watches, push → pushes, mix → mixes, go → goes, do → does"],
+["<b>Phụ âm + y</b>: đổi y thành i rồi thêm -es","cry → cries, fly → flies, study → studies"],
+["<b>Nguyên âm + y</b>: chỉ thêm -s","play → plays, stay → stays"],
+["Bất quy tắc","have → has"]])}
+<h4>C. Câu hỏi Yes/No</h4>
+${T(["Câu hỏi","Trả lời"],[
+["<b>Do</b> I / you / we / they study?","Yes, I <b>do</b>. / No, I <b>don't</b>."],
+["<b>Does</b> he / she / it study?","Yes, she <b>does</b>. / No, she <b>doesn't</b>."]])}
+<p>Cấu trúc: ${H("Do / Does + chủ ngữ + động từ nguyên mẫu …?")}</p>`,
+tips:["Chữ -s chỉ xuất hiện <b>một lần</b>: nếu đã có does / doesn't thì động từ chính trở về nguyên mẫu.","Tiếng Việt không chia động từ nên con hay quên -s. Mẹo: thấy he, she, it hoặc một tên người thì “gắn đuôi -s”."],
+mist:[["He play football.","He plays football.","Chủ ngữ ngôi 3 số ít thêm -s"],["She doesn't likes milk.","She doesn't like milk.","Sau doesn't dùng động từ nguyên mẫu"],["Does he plays?","Does he play?","Sau Does dùng động từ nguyên mẫu"],["He haves a cat.","He has a cat.","have → has"]],
+home:"Con kể một ngày của bố hoặc mẹ: “Mom gets up at 6. She cooks breakfast…”",
+ex:[{q:"My brother ___ TV after school. (watch)",a:["watches"]},{q:"She ___ English every day. (study)",a:["studies"]},{q:"They ___ soccer on Sundays. (play)",a:["play"]},{q:"He ___ a big dog. (have)",a:["has"]},{q:"My dad ___ coffee. (not / drink)",a:["doesn't drink","does not drink"]},{q:"___ your mom cook dinner? — Yes, she does.",a:["does"]},{q:"Do you like fish? — No, I ___.",a:["don't","do not"]},{q:"The baby ___ at night. (cry)",a:["cries"]}]},
+
+{n:8,u:"B",vi:"Hiện tại đơn và trạng từ tần suất",en:"Present Simple and Frequency Adverbs",sb:34,wb:36,
+goals:["Biết khi nào dùng thì hiện tại đơn","Dùng always, usually, often, sometimes, never","Đặt trạng từ tần suất đúng vị trí"],
+body:`
+<h4>A. Khi nào dùng hiện tại đơn?</h4>
+${T(["Cách dùng","Ví dụ"],[
+["Thói quen, việc làm thường ngày","We <b>go</b> to school during the week. Amy <b>plays</b> the piano in the afternoon."],
+["Sự thật, chân lý","The Earth <b>circles</b> the Sun. Pandas <b>don't eat</b> fish."]])}
+<h4>B. Trạng từ tần suất: bao lâu một lần?</h4>
+${T(["Trạng từ","Mức độ","Nghĩa"],[["always","100%","luôn luôn"],["usually","khoảng 80%","thường thường"],["often","khoảng 60%","thường, hay"],["sometimes","khoảng 40–50%","thỉnh thoảng"],["never","0%","không bao giờ"]])}
+<h4>C. Vị trí trạng từ tần suất</h4>
+${T(["Loại động từ","Vị trí","Ví dụ"],[
+["Động từ thường","Chủ ngữ + "+H("trạng từ + động từ"),"They <b>usually get</b> up early."],
+["Động từ Be","Chủ ngữ + "+H("am / is / are + trạng từ"),"They <b>are always</b> happy."]])}`,
+tips:["Câu thần chú: “Đứng <b>trước</b> động từ thường, đứng <b>sau</b> động từ Be”.","never đã mang nghĩa phủ định, không dùng thêm not: <i>I never eat meat.</i>"],
+mist:[["I always am happy.","I am always happy.","Trạng từ đứng sau Be"],["She eats never meat.","She never eats meat.","Trạng từ đứng trước động từ thường"],["I don't never lie.","I never lie.","never đã có nghĩa phủ định"]],
+home:"Con nói 5 câu về bản thân, mỗi câu dùng một trạng từ: “I always brush my teeth…”",
+ex:[{q:"The Earth ___ around the Sun. (go)",a:["goes"]},{q:"Chọn câu đúng:",o:["I always am happy.","I am always happy."],a:1},{q:"Chọn câu đúng:",o:["She never eats meat.","She eats never meat."],a:0},{q:"100% → ___",a:["always"]},{q:"0% → ___",a:["never"]},{q:"Chọn câu đúng:",o:["We usually go to school by bus.","We go usually to school by bus."],a:0},{q:"Tom ___ late for class. (be + never)",a:["is never"]}]},
+
+{n:9,u:"B",vi:"Thì hiện tại tiếp diễn",en:"Present Continuous",sb:38,wb:40,
+goals:["Dùng am / is / are + V-ing cho việc đang xảy ra","Viết câu phủ định và câu hỏi","Nắm quy tắc thêm -ing"],
+body:`
+<h4>A. Khẳng định và phủ định</h4>
+<p>Công thức: ${H("Be (am / is / are) + động từ-ing")}. Dùng cho hành động ${H("đang xảy ra ngay lúc nói")}.</p>
+${T(["Chủ ngữ","Khẳng định","Phủ định"],[
+["I","am sleeping","am not sleeping"],["He / She / It","is sleeping","isn't sleeping"],["You / We / They","are sleeping","aren't sleeping"]])}
+<h4>B. Câu hỏi Yes/No</h4>
+${T(["Câu hỏi","Trả lời"],[["<b>Am</b> I sleeping?","Yes, you are. / No, you aren't."],["<b>Are</b> you sleeping?","Yes, I am. / No, I'm not."],["<b>Is</b> he / she / it sleeping?","Yes, he is. / No, he isn't."],["<b>Are</b> we / they sleeping?","Yes, they are. / No, they aren't."]])}
+<h4>C. Quy tắc thêm -ing</h4>
+${T(["Quy tắc","Ví dụ"],[
+["Hầu hết động từ: thêm <b>-ing</b>","say → saying, go → going, walk → walking"],
+["Tận cùng là <b>e</b> câm: bỏ e, thêm -ing","come → coming, make → making, live → living"],
+["Một nguyên âm + một phụ âm ở cuối: "+H("gấp đôi phụ âm"),"swim → swimming, hit → hitting, get → getting, run → running"],
+["Không gấp đôi w, x, y","play → playing, fix → fixing"]])}`,
+tips:["Hai phần không được thiếu: <b>be</b> và <b>-ing</b>. Thiếu một trong hai là sai.","Dấu hiệu nhận biết: now, right now, at the moment, Look!, Listen!"],
+mist:[["She reading a book.","She is reading a book.","Thiếu động từ be"],["I am write.","I am writing.","Thiếu -ing"],["He is swiming.","He is swimming.","swim phải gấp đôi m"],["They are makeing a cake.","They are making a cake.","Bỏ e câm trước khi thêm -ing"]],
+home:"Trò “Con đang làm gì?”: một người diễn tả bằng động tác, người kia đoán: “You are cooking!”",
+ex:[{q:"Look! The cat ___ on the sofa. (sleep)",a:["is sleeping"]},{q:"I ___ a letter now. (write)",a:["am writing","'m writing"]},{q:"They ___ in the pool. (swim)",a:["are swimming"]},{q:"She ___ now. (not / run)",a:["isn't running","is not running"]},{q:"___ you listening to me? — Yes, I am.",a:["are"]},{q:"make → ___",a:["making"]},{q:"sit → ___",a:["sitting"]},{q:"play → ___",a:["playing"]}]},
+
+{n:10,u:"B",vi:"Hiện tại đơn và hiện tại tiếp diễn",en:"Present Simple vs. Present Continuous",sb:42,wb:44,
+goals:["Phân biệt thói quen và việc đang diễn ra","Dựa vào từ chỉ thời gian để chọn thì"],
+body:`
+<h4>So sánh hai thì</h4>
+${T(["","Hiện tại đơn","Hiện tại tiếp diễn"],[
+["Dùng cho","Thói quen, việc lặp lại, sự thật","Việc đang xảy ra lúc nói, việc tạm thời hôm nay"],
+["Công thức","S + V / V-s","S + am / is / are + V-ing"],
+["Ví dụ","Amy usually <b>wears</b> jeans.<br>My mom usually <b>cooks</b> dinner.","Amy <b>is wearing</b> a skirt today.<br>My dad <b>is cooking</b> dinner now."]])}
+<h4>Từ chỉ thời gian: dấu hiệu nhận biết</h4>
+${T(["Hiện tại đơn","Hiện tại tiếp diễn"],[
+["every day, every week, every month","now, right now"],
+["on Sundays, on Tuesdays","at the moment"],
+["in the morning / afternoon / evening, at night","today"],
+["once a week, twice a week, three times a month","Look! Listen!"],
+["always, usually, often, sometimes, never",""]])}`,
+tips:["Hỏi: việc này <b>thường xuyên</b> xảy ra hay <b>đang</b> xảy ra? Thường xuyên → hiện tại đơn; đang → hiện tại tiếp diễn.","Nhìn từ chỉ thời gian trước, rồi mới chia động từ."],
+mist:[["I am playing soccer every day.","I play soccer every day.","every day là thói quen"],["Look! It rains.","Look! It is raining.","Look! cho biết việc đang xảy ra"]],
+home:"Cha mẹ nói hai câu: “Every day I … / Now I am …”. Con làm theo với việc của mình.",
+ex:[{q:"My mom usually ___ dinner. (cook)",a:["cooks"]},{q:"Shh! The baby ___ now. (sleep)",a:["is sleeping"]},{q:"We ___ English on Mondays. (have)",a:["have"]},{q:"Look! It ___. (rain)",a:["is raining"]},{q:"Cụm nào đi với hiện tại tiếp diễn?",o:["every day","at the moment","on Sundays"],a:1},{q:"I ___ a comic book right now. (read)",a:["am reading","'m reading"]},{q:"Lan ___ to school every day. (walk)",a:["walks"]}]},
+
+{n:11,u:"B",vi:"Thì tương lai với Will",en:"Future: Will",sb:46,wb:48,
+goals:["Dùng will + động từ nguyên mẫu để nói về tương lai","Viết câu phủ định với won't","Đặt và trả lời câu hỏi với Will"],
+body:`
+<h4>A. Khẳng định và phủ định</h4>
+${T(["","Ví dụ"],[
+["Khẳng định: S + "+H("will + V nguyên mẫu"),"We <b>will read</b> tomorrow. It <b>will be</b> cloudy tomorrow."],
+["Phủ định: S + "+H("will not (won't) + V"),"John <b>won't read</b> tomorrow. It <b>won't be</b> cloudy."]])}
+<p>Will dùng giống nhau cho mọi chủ ngữ. Viết tắt: I'll, you'll, he'll, she'll, it'll, we'll, they'll. <b>won't = will not</b>.</p>
+<h4>B. Câu hỏi Yes/No</h4>
+${T(["Câu hỏi","Trả lời"],[["<b>Will</b> you read tomorrow?","Yes, I <b>will</b>. / No, I <b>won't</b>."],["<b>Will</b> it be cloudy tomorrow?","Yes, it <b>will</b>. / No, it <b>won't</b>."]])}
+<p>Từ chỉ thời gian: tomorrow, tonight, next week / month / year, this Sunday, in the future.</p>`,
+tips:["Sau will luôn là động từ nguyên mẫu: will go (không will goes), will be (không will is / am / are)."],
+mist:[["He will goes.","He will go.","Sau will dùng nguyên mẫu"],["I will am a doctor.","I will be a doctor.","Be sau will giữ nguyên là be"],["Will you come? — Yes, I'll.","Yes, I will.","Không viết tắt khi trả lời Yes"]],
+home:"Con nói 3 điều sẽ làm vào cuối tuần: “On Sunday, I will …”",
+ex:[{q:"We ___ Da Lat next summer. (visit)",a:["will visit","'ll visit"]},{q:"It ___ sunny tomorrow. (be)",a:["will be","'ll be"]},{q:"Chọn câu đúng:",o:["He will goes to school.","He will go to school."],a:1},{q:"I ___ fast food tomorrow. (not / eat)",a:["won't eat","will not eat"]},{q:"___ you help me tomorrow? — Yes, I will.",a:["will"]},{q:"Will they come to the party? — No, they ___.",a:["won't","will not"]}]},
+
+{n:12,u:"C",test:true,vi:"Kiểm tra giữa kỳ 1",en:"Progress Test 1",sb:51,wb:52,range:"Bài 1–11",
+goals:["Ôn toàn bộ Phần I: danh từ, đại từ, sở hữu, Be, hiện tại đơn, hiện tại tiếp diễn, will"],
+body:`
+<h4>Bảng tự kiểm tra trước khi làm bài</h4>
+${T(["Nội dung","Em đã nắm được chưa?","Nếu chưa, xem lại"],[
+["Số nhiều: -s, -es, -ies, bất quy tắc; a / an","children, feet, an egg","Bài 1"],
+["Đếm được / không đếm được; some / any","some milk, any apples","Bài 2"],
+["Đại từ chủ ngữ và tân ngữ","He likes her.","Bài 3"],
+["this / that / these / those; ’s và s’","these books, the girls' room","Bài 4"],
+["my / mine, your / yours…; Whose","It's mine. Whose bag is this?","Bài 5"],
+["am / is / are; There is / There are","There are two cats.","Bài 6"],
+["Hiện tại đơn: -s / -es, don't / doesn't, Do / Does","She doesn't like fish.","Bài 7"],
+["Trạng từ tần suất và vị trí","I am always happy.","Bài 8"],
+["Hiện tại tiếp diễn: be + V-ing","He is swimming.","Bài 9"],
+["Chọn thì theo từ chỉ thời gian","every day ↔ now","Bài 10"],
+["will / won't + V","It will be sunny.","Bài 11"]])}`,
+tips:["Làm bài kiểm tra trong sách học sinh (trang 51) như thi thật: không xem lý thuyết, bấm giờ. Sau đó chấm bằng file đáp án.","Câu nào sai, ghi số bài tương ứng ở bảng trên và học lại bài đó."],
+mist:[],
+home:"Cha mẹ đọc to 10 câu bất kỳ trong phần Tự luyện của bài 1–11, con trả lời miệng.",
+ex:[{q:"one child → two ___",a:["children"]},{q:"I don't have ___ brothers.",o:["some","any"],a:1},{q:"Mary likes Tom. → Mary likes ___.",a:["him"]},{q:"___ book is this? — It's mine.",a:["whose"]},{q:"They ___ happy today. (be)",a:["are"]},{q:"He ___ to bed at 9 p.m. (go)",a:["goes"]},{q:"She is ___ late. (không bao giờ)",a:["never"]},{q:"Listen! Somebody ___. (sing)",a:["is singing"]},{q:"We ___ to Japan next year. (travel)",a:["will travel","'ll travel"]},{q:"There ___ an apple on the table.",o:["is","are"],a:0}]},
+
+{n:13,u:"D",vi:"Quá khứ đơn: động từ có quy tắc",en:"Past Simple: Regular Verbs",sb:56,wb:58,
+goals:["Thêm -ed cho động từ có quy tắc","Viết câu phủ định với didn't","Đặt câu hỏi với Did","Nhận biết từ chỉ thời gian quá khứ"],
+body:`
+<h4>A. Khẳng định và phủ định</h4>
+${T(["","Mọi chủ ngữ (I / you / he / she / it / we / they)"],[
+["Khẳng định","played (V-ed)"],["Phủ định",H("didn't + V nguyên mẫu")+": didn't play"]])}
+<p>Từ chỉ thời gian quá khứ:</p>
+${W(["yesterday","yesterday morning","yesterday afternoon","last night","last week","last month","last year","last summer","two days ago"])}
+<h4>B. Câu hỏi Yes/No</h4>
+${T(["Câu hỏi","Trả lời"],[["<b>Did</b> you / he / they play?","Yes, I <b>did</b>. / No, I <b>didn't</b>."]])}
+<p>Cấu trúc: ${H("Did + chủ ngữ + V nguyên mẫu …?")}</p>
+<h4>C. Quy tắc thêm -ed</h4>
+${T(["Quy tắc","Ví dụ"],[
+["Hầu hết động từ: thêm <b>-ed</b>","answer → answered, open → opened, enjoy → enjoyed"],
+["Tận cùng là <b>e</b>: chỉ thêm <b>-d</b>","arrive → arrived, hope → hoped, invite → invited"],
+["Một nguyên âm + một phụ âm: gấp đôi phụ âm","stop → stopped, plan → planned, mop → mopped"],
+["<b>Phụ âm + y</b>: đổi y thành i rồi thêm -ed","cry → cried, fry → fried, study → studied"]])}
+<h4>Cách đọc đuôi -ed (bổ sung)</h4>
+${T(["Đọc là","Khi động từ tận cùng bằng âm","Ví dụ"],[["/ɪd/","t, d","wanted, needed, visited"],["/t/","p, k, s, sh, ch, f","stopped, looked, washed, watched"],["/d/","các âm còn lại","played, cleaned, lived"]])}`,
+tips:["Chữ -ed cũng như -s ở hiện tại: có did / didn't thì động từ chính trở về nguyên mẫu.","Quá khứ đơn dùng chung một dạng cho mọi chủ ngữ, dễ hơn hiện tại đơn."],
+mist:[["I didn't played.","I didn't play.","Sau didn't dùng nguyên mẫu"],["Did you watched TV?","Did you watch TV?","Sau Did dùng nguyên mẫu"],["He studyed.","He studied.","Phụ âm + y → ied"],["She stoped.","She stopped.","stop gấp đôi p"]],
+home:"Bữa tối, con kể 3 việc đã làm hôm nay bằng động từ có -ed: “I played…, I watched…”",
+ex:[{q:"We ___ a movie last night. (watch)",a:["watched"]},{q:"She ___ hard yesterday. (study)",a:["studied"]},{q:"The bus ___ near my house. (stop)",a:["stopped"]},{q:"They ___ badminton last Sunday. (play)",a:["played"]},{q:"I ___ my grandma last week. (not / visit)",a:["didn't visit","did not visit"]},{q:"___ you clean your room yesterday? — Yes, I did.",a:["did"]},{q:"hope → ___",a:["hoped"]},{q:"Did he call you? — No, he ___.",a:["didn't","did not"]}]},
+
+{n:14,u:"D",vi:"Quá khứ đơn: động từ bất quy tắc và Be",en:"Past Simple: Irregular Verbs and Be",sb:60,wb:62,
+goals:["Học thuộc 20 động từ bất quy tắc thường gặp","Dùng was / were","Phủ định và câu hỏi với did / was / were"],
+body:`
+<h4>A. Động từ bất quy tắc</h4>
+<p>Động từ bất quy tắc không thêm -ed mà có dạng quá khứ riêng. Phủ định và câu hỏi vẫn dùng ${H("did / didn't + V nguyên mẫu")}: <i>I slept. → I didn't sleep. → Did you sleep?</i></p>
+${T(["Nguyên mẫu → Quá khứ","","",""],[
+["begin → began","break → broke","buy → bought","come → came"],
+["do → did","drink → drank","drive → drove","eat → ate"],
+["find → found","give → gave","go → went","have → had"],
+["make → made","meet → met","read → read*","see → saw"],
+["sleep → slept","speak → spoke","take → took","write → wrote"]])}
+<p>* <b>read</b> ở quá khứ viết giống nhưng đọc là /red/.</p>
+<h4>B. Be ở quá khứ: was / were</h4>
+${T(["Chủ ngữ","Khẳng định","Phủ định","Câu hỏi"],[
+["I / He / She / It","was","wasn't","Was I / he / she / it …?"],
+["You / We / They","were","weren't","Were you / we / they …?"]])}
+<p>${H("was")} là quá khứ của am và is; ${H("were")} là quá khứ của are. There was / There were: <i>There were many people at the game.</i></p>`,
+tips:["Học động từ bất quy tắc theo nhóm âm: drink–drank, begin–began; buy–bought, bring–brought.","Mỗi ngày học 5 động từ, đọc to ba lần: “go – went, go – went, go – went”."],
+mist:[["She didn't went.","She didn't go.","Sau didn't dùng nguyên mẫu"],["I goed to school.","I went to school.","go là động từ bất quy tắc"],["They was at home.","They were at home.","they đi với were"],["Did you was tired?","Were you tired?","Câu hỏi với Be không dùng Did"]],
+home:"Chơi “ping-pong động từ”: cha mẹ nói nguyên mẫu, con nói nhanh dạng quá khứ.",
+ex:[{q:"go → ___",a:["went"]},{q:"eat → ___",a:["ate"]},{q:"buy → ___",a:["bought"]},{q:"write → ___",a:["wrote"]},{q:"I ___ a rainbow yesterday. (see)",a:["saw"]},{q:"Chọn câu đúng:",o:["She didn't went to school.","She didn't go to school."],a:1},{q:"We ___ at the zoo last Sunday. (be)",a:["were"]},{q:"My dad ___ tired last night. (be)",a:["was"]},{q:"___ you at home yesterday? — Yes, I was.",a:["were"]}]},
+
+{n:15,u:"D",vi:"Trợ động từ can, could, may, will",en:"Helping Verbs",sb:64,wb:66,
+goals:["Dùng can / could để nói về khả năng","Dùng may / can để xin phép và cho phép","Ôn will cho tương lai"],
+body:`
+<h4>A. Khả năng: can và could</h4>
+${T(["","Khẳng định","Phủ định","Câu hỏi"],[
+["Hiện tại / tương lai","I <b>can</b> swim.","He <b>can't</b> swim.","<b>Can</b> Amy swim?"],
+["Quá khứ","I <b>could</b> swim.","He <b>couldn't</b> swim.","<b>Could</b> you swim?"]])}
+<p>${H("can / could + V nguyên mẫu")}. can't = cannot; couldn't = could not. Trả lời: Yes, I can / could. No, I can't / couldn't.</p>
+<h4>B. Xin phép: may và can</h4>
+${T(["Khẳng định","Phủ định","Câu hỏi"],[["You <b>may / can</b> sit down.","You <b>may not / can't</b> sit down.","<b>May / Can</b> I sit down?"]])}
+<p><b>May</b> lịch sự, trang trọng hơn <b>can</b>. Nên dùng May I …? khi nói với thầy cô, người lớn.</p>
+<h4>C. Tương lai: will</h4>
+${T(["Khẳng định","Phủ định","Câu hỏi"],[["It <b>will</b> rain.","It <b>won't</b> rain.","<b>Will</b> it rain?"]])}`,
+tips:["Sau can, could, may, will: không thêm -s, không có to. <i>He can swim</i>, không nói <i>He can swims</i> hay <i>He can to swim</i>.","Xin phép vào lớp: “<b>May I come in?</b>”"],
+mist:[["He can plays piano.","He can play the piano.","Sau can dùng nguyên mẫu"],["I can to swim.","I can swim.","Không có to sau can"],["She cans dance.","She can dance.","can không thêm -s"]],
+home:"Con nói 3 việc con <b>can</b> làm bây giờ và 1 việc con <b>couldn't</b> làm khi còn nhỏ.",
+ex:[{q:"My little sister ___ read yet. (không thể)",a:["can't","cannot","can not"]},{q:"I ___ swim when I was five. (đã có thể)",a:["could"]},{q:"Chọn câu đúng:",o:["He can plays the piano.","He can play the piano."],a:1},{q:"___ I use your pen? (hỏi lịch sự)",o:["May","Will"],a:0},{q:"You ___ talk in the library. (không được phép, lịch sự)",a:["may not"]},{q:"Can you ride a bike? — Yes, I ___.",a:["can"]},{q:"Could you swim last year? — No, I ___.",a:["couldn't","could not"]}]},
+
+{n:16,u:"E",vi:"Tính từ",en:"Adjectives",sb:68,wb:70,
+goals:["Đặt tính từ trước danh từ","Dùng tính từ sau động từ Be","Học các cặp tính từ trái nghĩa"],
+body:`
+<h4>A. Tính từ + danh từ</h4>
+<p>Tính từ miêu tả danh từ và ${H("đứng trước danh từ")}: <i>The <b>pretty</b> girls sang songs. Sam bought an <b>expensive</b> backpack.</i></p>
+<h4>B. Be + tính từ</h4>
+<p>Tính từ có thể đứng ${H("sau am / is / are")} để miêu tả chủ ngữ: <i>The Earth is <b>round</b>. Mary is <b>smart</b> and <b>kind</b>.</i></p>
+<h4>C. Tính từ thường gặp</h4>
+${T(["Cặp trái nghĩa","","",""],[
+["beautiful ↔ ugly","big ↔ little / small","bitter ↔ sweet","boring ↔ interesting"],
+["cheap ↔ expensive","clean ↔ dirty","cold ↔ hot","dangerous ↔ safe"],
+["diligent ↔ lazy","dry ↔ wet","easy ↔ difficult / hard","fat ↔ skinny"],
+["good ↔ bad","happy ↔ sad","long ↔ short","noisy ↔ quiet"],
+["old ↔ new","poor ↔ rich","slow ↔ fast / quick","strong ↔ weak"],
+["tall ↔ short","young ↔ old","",""]])}
+<p>Tính từ khác:</p>
+${W(["angry","busy","careful","dark","delicious","exciting","famous","favorite","friendly","free","fresh","healthy","honest","important","intelligent","kind","nervous","popular","round","sharp","smart","special","tired","wonderful"])}`,
+tips:["Trật tự <b>ngược</b> tiếng Việt: “con chó <b>to</b>” → a <b>big</b> dog.","Tính từ không có số nhiều: <i>red apples</i>, không nói <i>reds apples</i>."],
+mist:[["I have a dog big.","I have a big dog.","Tính từ đứng trước danh từ"],["They are reds apples.","They are red apples.","Tính từ không thêm -s"],["She beautiful.","She is beautiful.","Thiếu động từ be"]],
+home:"Con tả một người trong gia đình bằng 3 tính từ: “My mom is kind, busy and funny.”",
+ex:[{q:"Chọn câu đúng:",o:["I have a dog big.","I have a big dog."],a:1},{q:"Chọn câu đúng:",o:["They are reds apples.","They are red apples."],a:1},{q:"cheap ↔ ___",a:["expensive"]},{q:"noisy ↔ ___",a:["quiet"]},{q:"little = ___",a:["small"]},{q:"lazy ↔ ___",a:["diligent","hardworking","hard-working"]},{q:"old ↔ ___ (người)",a:["young"]}]},
+
+{n:17,u:"E",vi:"Động từ nối và tính từ",en:"Linking Verbs and Adjectives",sb:72,wb:74,
+goals:["Nhận biết động từ nối: be, look, smell, feel, taste, sound","Dùng tính từ sau động từ nối","Phân biệt động từ nối và động từ hành động"],
+body:`
+<h4>A. Động từ nối + tính từ</h4>
+<p>Động từ nối ${H("không diễn tả hành động")}; nó nối chủ ngữ với thông tin về chủ ngữ. Tính từ đứng sau để ${H("miêu tả chủ ngữ")}.</p>
+${T(["Động từ nối","Nghĩa","Ví dụ"],[
+["be (am / is / are)","là","The Earth <b>is</b> round."],
+["look","trông có vẻ","The dogs <b>look</b> happy."],
+["smell","có mùi","The flowers <b>smell</b> good."],
+["feel","cảm thấy","The workers <b>feel</b> tired."],
+["taste","có vị","The chocolates <b>taste</b> sweet."],
+["sound","nghe có vẻ","The book <b>sounds</b> interesting."]])}
+<h4>B. Động từ nối hay động từ hành động?</h4>
+${T(["Động từ nối (miêu tả chủ ngữ)","Động từ hành động (chủ ngữ làm gì)"],[
+["The dogs <b>look</b> happy.","I <b>looked</b> at the sky."],
+["The flowers <b>smell</b> good.","I <b>smelled</b> the flowers."],
+["The workers <b>felt</b> tired.","I <b>felt</b> the dog's hair."],
+["The chocolates <b>taste</b> sweet.","I <b>tasted</b> the soup."]])}`,
+tips:["Mẹo thử: thay động từ bằng <b>is / are</b>. Nếu câu vẫn có nghĩa (The flowers <i>are</i> good) thì đó là động từ nối.","Sau động từ nối dùng <b>tính từ</b>, không dùng trạng từ: <i>smells good</i>, không nói <i>smells well</i>."],
+mist:[["The cake tastes deliciously.","The cake tastes delicious.","Sau động từ nối dùng tính từ"],["You look sadly.","You look sad.","Sau look (trông có vẻ) dùng tính từ"]],
+home:"Nếm thử món ăn, con nói: “It tastes sweet / salty / spicy.” Ngửi hoa: “It smells nice.”",
+ex:[{q:"This cake tastes ___.",o:["good","well"],a:0},{q:"You look ___ today.",o:["happy","happily"],a:0},{q:"The music sounds ___.",o:["beautiful","beautifully"],a:0},{q:"“She smells the flowers.” — smells là",o:["động từ nối","động từ hành động"],a:1},{q:"“The flowers smell sweet.” — smell là",o:["động từ nối","động từ hành động"],a:0},{q:"I feel ___. I want to sleep.",o:["tired","tiredly"],a:0}]},
+
+{n:18,u:"E",vi:"Trạng từ 1: trạng từ chỉ cách thức",en:"Adverbs 1",sb:76,wb:78,
+goals:["Dùng trạng từ để nói hành động được làm như thế nào","Tạo trạng từ từ tính từ","Đặt trạng từ đúng vị trí"],
+body:`
+<h4>A. Trạng từ bổ nghĩa cho động từ</h4>
+<p>Trạng từ cho biết ${H("hành động xảy ra như thế nào")}: <i>She drives <b>carefully</b>. He swims <b>fast</b>.</i></p>
+<p>Trạng từ ${H("không chen giữa động từ và tân ngữ")}: <i>He plays soccer <b>well</b></i> (đúng), <i>He plays well soccer</i> (sai).</p>
+<h4>B. Tính từ → trạng từ</h4>
+${T(["Quy tắc","Ví dụ"],[
+["Thêm <b>-ly</b>","bad → badly, clear → clearly, careful → carefully, loud → loudly, quiet → quietly, slow → slowly, soft → softly"],
+["Tận cùng <b>-y</b>: đổi y thành i rồi thêm -ly","busy → busily, happy → happily, easy → easily, noisy → noisily"],
+["Tận cùng <b>-le</b>: đổi thành -ly","simple → simply, possible → possibly, comfortable → comfortably"],
+["Giống tính từ","hard → hard, fast → fast, late → late, early → early"],
+["Bất quy tắc","good → <b>well</b>"]])}
+<p>So sánh: <i>He is a <b>slow</b> driver.</i> (tính từ, đi với danh từ driver) · <i>He drives <b>slowly</b>.</i> (trạng từ, đi với động từ drives)</p>`,
+tips:["Tính từ đi với <b>danh từ</b> (a good pianist), trạng từ đi với <b>động từ</b> (plays well).","Không có từ <i>fastly</i> hay <i>goodly</i>."],
+mist:[["He speaks well English.","He speaks English well.","Không chen trạng từ giữa động từ và tân ngữ"],["She sings beautiful.","She sings beautifully.","Bổ nghĩa cho động từ dùng trạng từ"],["He runs fastly.","He runs fast.","fast giữ nguyên"]],
+home:"Cha mẹ ra lệnh kèm trạng từ, con làm theo: “Walk slowly! Clap loudly! Speak quietly!”",
+ex:[{q:"slow → ___",a:["slowly"]},{q:"easy → ___",a:["easily"]},{q:"good → ___",a:["well"]},{q:"fast → ___",a:["fast"]},{q:"simple → ___",a:["simply"]},{q:"Chọn câu đúng:",o:["He speaks well English.","He speaks English well."],a:1},{q:"She sings ___.",o:["beautiful","beautifully"],a:1},{q:"He is a ___ runner.",o:["quick","quickly"],a:0}]},
+
+{n:19,u:"E",vi:"Trạng từ 2: trạng từ chỉ mức độ và tần suất",en:"Adverbs 2",sb:80,wb:82,
+goals:["Biết trạng từ bổ nghĩa cho động từ, tính từ và trạng từ khác","Dùng very, too, really, quite, completely, almost, truly","Ôn vị trí trạng từ tần suất"],
+body:`
+<h4>A. Trạng từ bổ nghĩa cho những gì?</h4>
+${T(["Bổ nghĩa cho","Ví dụ"],[
+["Động từ","The boys sang <b>loudly</b>. John did his homework <b>fast</b>."],
+["Tính từ","Mary's dress was <b>very</b> beautiful. These pants are <b>too</b> big for me."],
+["Trạng từ khác","John eats <b>really</b> fast. She dances <b>quite</b> nicely."]])}
+<p>Trạng từ chỉ mức độ hay gặp (đứng trước tính từ hoặc trạng từ):</p>
+${T(["Từ","Nghĩa"],[["very","rất"],["really","thật sự, rất"],["quite","khá"],["too","quá (thường mang ý không tốt)"],["completely","hoàn toàn"],["almost","gần như"],["truly","thật sự"]])}
+<h4>B. Trạng từ tần suất (ôn bài 8)</h4>
+<p>always, usually, often, sometimes, never: đứng ${H("trước động từ thường")}, ${H("sau động từ Be")}. <i>Tom <b>often</b> drinks milk. They are <b>never</b> late for school.</i></p>`,
+tips:["<b>too</b> khác <b>very</b>: <i>very big</i> = rất to; <i>too big</i> = to quá, không dùng được.","Tìm từ đứng ngay sau trạng từ mức độ để biết nó bổ nghĩa cho từ nào."],
+mist:[["I usually am tired.","I am usually tired.","Sau Be"],["She reads often books.","She often reads books.","Trước động từ thường"]],
+home:"Con dùng very / too / really để nhận xét đồ vật: “This bag is too heavy!”",
+ex:[{q:"The test was ___ easy. (rất)",a:["very","really"]},{q:"This shirt is ___ big for me. I can't wear it.",o:["too","very"],a:0},{q:"“She runs really fast.” — really bổ nghĩa cho",o:["động từ runs","trạng từ fast"],a:1},{q:"“The room is completely dark.” — completely bổ nghĩa cho",o:["tính từ dark","danh từ room"],a:0},{q:"Chọn câu đúng:",o:["I usually am tired.","I am usually tired."],a:1},{q:"Chọn câu đúng:",o:["She often reads books.","She reads often books."],a:0}]},
+
+{n:20,u:"F",vi:"Giới từ chỉ thời gian",en:"Prepositions of Time",sb:84,wb:86,
+goals:["Dùng in, on, at với thời gian","Hỏi và trả lời về giờ, thứ, tháng, năm, ngày tháng","Đọc năm và số thứ tự"],
+body:`
+<h4>A. In, on, at</h4>
+${T(["Giới từ","Dùng với","Ví dụ"],[
+["<b>in</b>","năm, tháng, mùa, thế kỷ; buổi trong ngày","in 1996, in November, in the winter, in the twentieth century, in the morning"],
+["<b>on</b>","ngày cụ thể, thứ trong tuần, buổi của một thứ","on November 29th, on Saturday, on Saturday morning"],
+["<b>at</b>","giờ, noon, night, midnight","at 11:00, at noon, at night, at midnight"]])}
+<h4>B. Câu hỏi về thời gian</h4>
+${T(["Câu hỏi","Trả lời","Ghi chú"],[
+["What <b>time</b> is it?","It's 6 o'clock.","7:12 → seven twelve; 3:05 → three oh five"],
+["What <b>day</b> is it?","It's Sunday.","Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"],
+["What <b>month</b> is it?","It's January.","January … December"],
+["What <b>year</b> is it?","It's 2008.","1998 → nineteen ninety-eight; 2005 → two thousand five"],
+["What is the <b>date</b> today?","It's December 24th.","Đọc bằng số thứ tự: twenty-fourth"]])}
+<p>Số thứ tự: 1st first · 2nd second · 3rd third · 4th fourth · 5th fifth · 6th sixth · 7th seventh · 8th eighth · 9th ninth · 10th tenth · 21st twenty-first</p>`,
+tips:["Mẹo tam giác: <b>in</b> cho khoảng lớn (năm, tháng, mùa), <b>on</b> cho ngày, <b>at</b> cho điểm giờ.","Có tên thứ đi trước buổi (Friday night) thì dùng <b>on</b>: on Friday night, nhưng at night."],
+mist:[["in Monday","on Monday","Thứ trong tuần dùng on"],["on 7 o'clock","at 7 o'clock","Giờ dùng at"],["It's nine o'clock twenty-five.","It's nine twenty-five.","Không dùng o'clock khi có phút"],["It's May twenty-one.","It's May twenty-first.","Ngày tháng đọc bằng số thứ tự"]],
+home:"Mỗi sáng hỏi con: “What day is it? What's the date today?”",
+ex:[{q:"___ 2015",a:["in"]},{q:"___ Monday",a:["on"]},{q:"___ 7 o'clock",a:["at"]},{q:"___ the evening",a:["in"]},{q:"___ May 5th",a:["on"]},{q:"___ night",a:["at"]},{q:"___ Saturday morning",a:["on"]},{q:"2008 → It's ___.",a:["two thousand eight","two thousand and eight"]}]},
+
+{n:21,u:"F",vi:"Giới từ chỉ nơi chốn",en:"Prepositions of Place",sb:88,wb:90,
+goals:["Dùng in, on, above, under, in front of, behind","Dùng next to, near, between, across from","Dùng at + địa điểm"],
+body:`
+<h4>A. Vị trí so với một vật</h4>
+${T(["Giới từ","Nghĩa","Ví dụ"],[
+["in","ở trong","The ball is <b>in</b> the box."],
+["on","ở trên (có chạm)","The book is <b>on</b> the desk."],
+["above","ở phía trên (không chạm)","The picture is <b>above</b> the sofa."],
+["under","ở dưới","The cat is <b>under</b> the table."],
+["in front of","ở phía trước","The car is <b>in front of</b> the house."],
+["behind","ở phía sau","The boy is <b>behind</b> the tree."]])}
+<p>Cụm giới từ = ${H("giới từ + danh từ")}: in the room, under the table.</p>
+<h4>B. Vị trí trên phố, trong khu phố</h4>
+${T(["Giới từ","Nghĩa","Ví dụ"],[
+["next to","ngay bên cạnh","There is a parking lot <b>next to</b> the restaurant."],
+["near","gần","There is a park <b>near</b> the school."],
+["between … and …","ở giữa","The bank is <b>between</b> the post office <b>and</b> the bookstore."],
+["across from","đối diện","The restaurant is <b>across from</b> the bank."],
+["at + địa điểm","ở (nơi nào)","at home, at school, at work, at the park, at the store"]])}`,
+tips:["<b>on</b> là chạm bề mặt, <b>above</b> là cao hơn nhưng không chạm.","between luôn đi với <b>and</b>: between A <b>and</b> B."],
+mist:[["between the bank or the park","between the bank and the park","between đi với and"],["She is in home.","She is at home.","at home là cụm cố định"],["in front the house","in front of the house","Không quên of"]],
+home:"Giấu một món đồ chơi, con hỏi “Is it under the bed?”, cha mẹ trả lời “No, it's behind the door.”",
+ex:[{q:"The cat is ___ the table. (bên dưới)",a:["under"]},{q:"My school is ___ the bank and the park.",a:["between"]},{q:"The picture is ___ the sofa. (phía trên, không chạm)",a:["above"]},{q:"Lan is ___ home now.",a:["at"]},{q:"The ball is ___ the box. (bên trong)",a:["in"]},{q:"The bookstore is ___ the post office. (đối diện)",a:["across from"]},{q:"The car is ___ the house. (phía sau)",a:["behind"]},{q:"There is a bus stop ___ my house. (ngay cạnh)",a:["next to"]}]},
+
+{n:22,u:"G",vi:"Câu khẳng định, phủ định và câu hỏi Yes/No",en:"Statements and Yes/No Questions",sb:92,wb:94,
+goals:["Tổng hợp cách đổi câu khẳng định sang phủ định cho mọi thì đã học","Đổi câu khẳng định sang câu hỏi Yes/No","Trả lời ngắn đúng"],
+body:`
+<h4>A. Câu khẳng định và phủ định</h4>
+${T(["Loại","Khẳng định","Phủ định"],[
+["Be","He <b>is</b> 12 years old.","He <b>isn't</b> 12 years old."],
+["Hiện tại đơn","She <b>speaks</b> English.","She <b>doesn't speak</b> English."],
+["Hiện tại tiếp diễn","I <b>am watching</b> TV.","I <b>am not watching</b> TV."],
+["Quá khứ đơn","We <b>played</b> soccer.","We <b>didn't play</b> soccer."],
+["Tương lai","He <b>will go</b> to Japan.","He <b>won't go</b> to Japan."],
+["can / may","They <b>can</b> fly. You <b>may</b> play here.","They <b>can't</b> fly. You <b>may not</b> play here."]])}
+<h4>B. Câu hỏi Yes/No</h4>
+${T(["Câu hỏi","Có","Không"],[
+["<b>Is</b> he 12 years old?","Yes, he is.","No, he isn't."],
+["<b>Does</b> she speak English?","Yes, she does.","No, she doesn't."],
+["<b>Are</b> you watching TV?","Yes, I am.","No, I'm not."],
+["<b>Did</b> you play soccer?","Yes, we did.","No, we didn't."],
+["<b>Will</b> he go to Japan?","Yes, he will.","No, he won't."],
+["<b>Can</b> they fly? / <b>May</b> I play here?","Yes, they can. / Yes, you may.","No, they can't. / No, you may not."]])}
+<p>Quy tắc chung: ${H("đưa từ đứng trước (be, can, will, may) lên đầu câu")}. Nếu câu chỉ có động từ thường thì ${H("mượn Do / Does / Did")}. Trả lời “No” thường dùng dạng viết tắt.</p>`,
+tips:["Tự hỏi: câu có <b>be / can / will / may</b> không? Có thì đảo từ đó lên đầu. Không có thì dùng do / does / did.","Câu trả lời ngắn lặp lại đúng trợ động từ của câu hỏi: Did…? → Yes, I did."],
+mist:[["Do he like pizza?","Does he like pizza?","he / she / it dùng Does"],["Are you like cats?","Do you like cats?","like là động từ thường, mượn Do"],["Did you went?","Did you go?","Sau Did dùng nguyên mẫu"]],
+home:"Cha mẹ nói một câu khẳng định, con đổi nhanh thành câu phủ định rồi câu hỏi.",
+ex:[{q:"He plays tennis. → He ___ tennis.",a:["doesn't play","does not play"]},{q:"They went to Hue. → They ___ to Hue.",a:["didn't go","did not go"]},{q:"She can dance. → ___ she dance?",a:["can"]},{q:"You are hungry. → ___ you hungry?",a:["are"]},{q:"Tom likes pizza. → ___ Tom like pizza?",a:["does"]},{q:"Will it rain? — No, it ___.",a:["won't","will not"]},{q:"May I come in? — No, you ___.",a:["may not"]},{q:"Is Mai watching TV? — Yes, she ___.",a:["is"]}]},
+
+{n:23,u:"G",vi:"Câu hỏi có từ để hỏi",en:"Information Questions",sb:96,wb:98,
+goals:["Dùng What, Who, Whose","Dùng When, What time, Where","Dùng How many và How much"],
+body:`
+<p>Câu hỏi thông tin dùng để ${H("hỏi thêm thông tin")}, không trả lời bằng Yes / No.</p>
+<h4>A. What, Who, Whose</h4>
+${T(["Từ để hỏi","Hỏi về","Ví dụ"],[
+["What","vật, việc","<b>What</b> is this? — It's a table. <b>What</b> do you like? — I like apples."],
+["Who","người","<b>Who</b> are they? — They are my friends. <b>Who</b> speaks French? — Mr. Lewis does."],
+["Whose","chủ sở hữu","<b>Whose</b> bag is that? — It's mine."]])}
+<h4>B. When, What time, Where</h4>
+${T(["Từ để hỏi","Hỏi về","Ví dụ"],[
+["When","thời gian (ngày, tháng, thứ)","<b>When</b> is your birthday? — It's October 21st."],
+["What time","giờ","<b>What time</b> do you get up? — At 7:00."],
+["Where","nơi chốn","<b>Where</b> did Mary go? — To her grandma's house."]])}
+<h4>C. How many, How much</h4>
+${T(["Từ để hỏi","Đi với","Ví dụ"],[
+["How many","danh từ "+H("đếm được số nhiều"),"<b>How many</b> desks are there? — There are twenty desks."],
+["How much","danh từ "+H("không đếm được"),"<b>How much</b> money do you have? — I have three dollars."]])}
+<p>Cấu trúc thường gặp: ${H("Từ để hỏi + do / does / did / be + chủ ngữ + …?")} Khi <b>Who</b> hỏi về chủ ngữ thì không cần do / does: <i>Who speaks French?</i></p>`,
+tips:["Nhìn câu trả lời để chọn từ để hỏi: tên người → Who; giờ → What time; nơi → Where; số lượng đếm được → How many.","Ôn bài 2: money, water, milk, homework không đếm được nên đi với How much."],
+mist:[["How much apples?","How many apples?","apples đếm được"],["How many water?","How much water?","water không đếm được"],["Where you live?","Where do you live?","Thiếu do"]],
+home:"Phỏng vấn người thân: “When is your birthday? Where do you work? What do you like?”",
+ex:[{q:"___ is your birthday? — It's on June 1st.",a:["when"]},{q:"___ is your teacher? — Ms. Hoa.",a:["who"]},{q:"___ do you live? — In Ha Noi.",a:["where"]},{q:"___ time do you get up? — At 6:30.",a:["what"]},{q:"How ___ apples do you want? — Three.",a:["many"]},{q:"How ___ water do you drink? — Two glasses.",a:["much"]},{q:"___ bag is this? — It's Nam's.",a:["whose"]},{q:"___ do you want for lunch? — Noodles.",a:["what"]}]},
+
+{n:24,u:"C",test:true,vi:"Kiểm tra giữa kỳ 2",en:"Progress Test 2",sb:101,wb:102,range:"Bài 13–23",
+goals:["Ôn toàn bộ Phần II: quá khứ đơn, trợ động từ, tính từ, trạng từ, giới từ, cấu trúc câu"],
+body:`
+<h4>Bảng tự kiểm tra trước khi làm bài</h4>
+${T(["Nội dung","Ví dụ","Nếu chưa vững, xem lại"],[
+["Quá khứ đơn có quy tắc: -ed, didn't, Did","She studied. Did you play?","Bài 13"],
+["Động từ bất quy tắc; was / were","went, ate, bought; They were tired.","Bài 14"],
+["can / could / may / will","May I come in?","Bài 15"],
+["Tính từ: vị trí và cặp trái nghĩa","a big dog; cheap ↔ expensive","Bài 16"],
+["Động từ nối + tính từ","It smells good.","Bài 17"],
+["Trạng từ -ly, good → well, vị trí","He speaks English well.","Bài 18"],
+["very / too / really…; trạng từ tần suất","too big; I am always happy.","Bài 19"],
+["in / on / at (thời gian); hỏi giờ, ngày","on Monday, at 7:00","Bài 20"],
+["Giới từ nơi chốn","between A and B, across from","Bài 21"],
+["Phủ định và câu hỏi Yes/No","Does she…? No, she doesn't.","Bài 22"],
+["What / Who / Whose / When / Where / How many / How much","How much milk…?","Bài 23"]])}`,
+tips:["Làm bài kiểm tra trong sách học sinh (trang 101), sau đó làm phần Grammar Quizzes (từ trang 106) để ôn cả năm.","Đáp án Quiz ở Sách giáo viên từ trang 108."],
+mist:[],
+home:"Cả nhà cùng làm phần Tự luyện dưới đây, ai đúng nhiều hơn thắng.",
+ex:[{q:"They ___ chess yesterday. (play)",a:["played"]},{q:"I ___ a new book last week. (buy)",a:["bought"]},{q:"___ you at school yesterday? (be)",a:["were"]},{q:"Birds ___ fly, but penguins can't.",a:["can"]},{q:"This soup smells ___.",o:["good","well"],a:0},{q:"He runs very ___. (quick)",a:["quickly"]},{q:"We have English ___ Tuesday.",a:["on"]},{q:"The cat is ___ the bed. (bên dưới)",a:["under"]},{q:"Did you see Nam? — Yes, I ___.",a:["did"]},{q:"How ___ students are there in your class?",a:["many"]}]}
+];
+
+/* ---------- storage (per-viewer convenience) ---------- */
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let best=store.get("mng1-best")||{};
+
+/* ---------- nav ---------- */
+const side=document.getElementById("side");
+function renderNav(cur){
+  let h=`<a href="#home" ${cur==="home"?'aria-current="page"':''}><span class="n">★</span><span>Hướng dẫn học</span></a>`;
+  let u=null;
+  L.forEach(l=>{
+    if(l.u!==u && !l.test){u=l.u;h+=`<div class="grp">${UNITS[u]}</div>`}
+    if(l.test){u=null;h+=`<div class="grp">Kiểm tra</div>`}
+    const b=best[l.n];
+    h+=`<a href="#l${l.n}" ${cur===l.n?'aria-current="page"':''}><span class="n">${l.n}</span><span>${l.vi}</span>${b?`<span class="done">${b}</span>`:''}</a>`;
+  });
+  side.innerHTML=h;
+}
+const tg=document.getElementById("navtoggle");
+tg.addEventListener("click",()=>{const o=side.classList.toggle("open");tg.setAttribute("aria-expanded",o)});
+
+/* ---------- pages ---------- */
+const main=document.getElementById("main");
+function quizPage(l){return l.n<=11? (l.n>=2? l.n+104:null) : (l.n>=13&&l.n<=23? l.n+103:null)}
+function quizNum(l){return l.n<=11? l.n-1 : l.n-2}
+
+function home(){
+  let map="";
+  L.forEach(l=>{map+=`<a href="#l${l.n}" class="${l.test?'test':''}"><span class="n">${l.n}</span><span>${l.vi}<small>${l.en}</small></span></a>`});
+  return `<article class="sheet">
+  <div class="eyebrow">Hướng dẫn học</div>
+  <h2 class="lt">Học ngữ pháp tiếng Anh cùng bộ My Next Grammar 1</h2>
+  <p class="en">24 bài, chia làm hai phần. Mỗi bài có lý thuyết bằng tiếng Việt, mẹo nhớ, lỗi hay gặp, gợi ý luyện ở nhà và bài tự luyện có chấm điểm.</p>
+  <h3>Ba quyển sách dùng thế nào?</h3>
+  <div class="books">
+    <div class="book"><h4>Sách học sinh</h4><p>Sách chính. Mỗi bài 4 trang: <b>Grammar Link</b> (quiz ôn bài cũ ở cuối sách), <b>Grammar Introduction</b> (bảng lý thuyết và bài Check-up), <b>Grammar Practice</b> (bài tập tổng hợp).</p></div>
+    <div class="book"><h4>Sách bài tập</h4><p>Luyện thêm sau khi học. Mỗi bài có <b>Grammar Summary</b> (tóm tắt ngữ pháp, có bản Anh và Hàn) và <b>Grammar Practice</b> nhiều dạng bài.</p></div>
+    <div class="book"><h4>Sách giáo viên</h4><p>Dành cho người kèm học: <b>mục tiêu</b> từng bài, gợi ý <b>khởi động</b> và các bước giảng. Có đáp án Grammar Quizzes (trang 108) và đáp án Sách bài tập (trang 113).</p></div>
+  </div>
+  <h3>Lộ trình cho mỗi bài</h3>
+  <ol class="steps">
+    <li><b>Ôn bài cũ:</b> làm Grammar Quiz ở cuối Sách học sinh (số trang ghi ở đầu mỗi bài bên dưới).</li>
+    <li><b>Học lý thuyết:</b> đọc phần “Kiến thức” trên trang này, sau đó xem bảng trong Sách học sinh.</li>
+    <li><b>Làm Check-up</b> ngay sau mỗi bảng trong Sách học sinh.</li>
+    <li><b>Tự luyện</b> trên trang này: bấm “Chấm bài” để biết đúng sai ngay.</li>
+    <li><b>Làm Sách bài tập</b> của bài đó, rồi chấm bằng file đáp án.</li>
+    <li><b>Luyện nói ở nhà</b> 5 phút theo gợi ý cuối mỗi bài.</li>
+  </ol>
+  <div class="tip"><strong>Gợi ý cho phụ huynh</strong>Mỗi tuần học 2 bài là vừa sức (khoảng 12 tuần cho cả quyển). Sau bài 11 và bài 23 có bài kiểm tra (bài 12, bài 24) để xem con đã nắm chắc chưa.</div>
+  <h3>Mục lục 24 bài</h3>
+  <div class="map">${map}</div>
+  </article>`;
+}
+
+function lessonPage(l){
+  const qp=quizPage(l);
+  const refs=[`Sách học sinh tr. ${l.sb}${l.test?'':'–'+(l.sb+3)}`,`Sách bài tập tr. ${l.wb}${l.test?'':'–'+(l.wb+3)}`,`Sách giáo viên tr. ${l.wb}`];
+  const mist=l.mist.length?`<h3>Lỗi hay gặp</h3><div class="mist">${l.mist.map(m=>`<div><span class="w">${m[0]}</span><span class="r">${m[1]}</span><span class="why">${m[2]}</span></div>`).join('')}</div>`:'';
+  const steps=l.test?`<ol class="steps"><li>Làm <b>Progress Test</b> trong Sách học sinh trang ${l.sb} và Sách bài tập trang ${l.wb}.</li><li>Chấm bằng file đáp án, ghi lại những câu sai.</li><li>Tra bảng tự kiểm tra ở trên để biết cần học lại bài nào.</li></ol>`:
+  `<ol class="steps">${qp?`<li><b>Grammar Link:</b> làm Grammar Quiz ${quizNum(l)} ở Sách học sinh trang ${qp} để ôn bài trước.</li>`:''}
+  <li><b>Sách học sinh trang ${l.sb}–${l.sb+1}:</b> đọc bảng Grammar Introduction, làm các bài Check-up ngay dưới mỗi bảng.</li>
+  <li><b>Sách học sinh trang ${l.sb+2}–${l.sb+3}:</b> làm Grammar Practice.</li>
+  <li><b>Sách bài tập trang ${l.wb}–${l.wb+3}:</b> đọc Grammar Summary rồi làm Grammar Practice.</li>
+  <li><b>Chấm bài</b> bằng file đáp án Sách học sinh và đáp án Sách bài tập.</li></ol>`;
+  const prev=L.find(x=>x.n===l.n-1), next=L.find(x=>x.n===l.n+1);
+  return `<article class="sheet">
+  <div class="eyebrow">${l.test?`Kiểm tra · ${l.range}`:`Bài ${l.n} · ${UNITS[l.u]}`}</div>
+  <h2 class="lt">${l.vi}</h2>
+  <p class="en">${l.en}</p>
+  <div class="refs">${refs.map(r=>`<span class="chip">${r}</span>`).join('')}</div>
+  <h3>Mục tiêu</h3>
+  <ul class="goals">${l.goals.map(g=>`<li>${g}</li>`).join('')}</ul>
+  <h3>${l.test?'Ôn tập':'Kiến thức'}</h3>
+  ${l.body}
+  <div class="tip"><strong>Mẹo ghi nhớ</strong><ul>${l.tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+  ${mist}
+  <h3>Tự luyện</h3>
+  <p>Gõ đáp án hoặc chọn một phương án, rồi bấm <b>Chấm bài</b>.</p>
+  <form class="quiz" id="quiz" novalidate>${l.ex.map((e,i)=>qItem(l,e,i)).join('')}
+    <div class="qbar"><button type="submit" class="btn pri">Chấm bài</button><button type="button" class="btn sec" id="reset">Làm lại</button><span class="score" id="score" role="status"></span></div>
+  </form>
+  <h3>Học với sách</h3>
+  ${steps}
+  <div class="tip"><strong>Luyện nói ở nhà</strong>${l.home}</div>
+  </article>
+  <div class="pager">${prev?`<a href="#l${prev.n}"><small>← Bài trước</small>${prev.n}. ${prev.vi}</a>`:`<a href="#home"><small>← Quay lại</small>Hướng dẫn học</a>`}${next?`<a href="#l${next.n}" style="text-align:right;margin-left:auto"><small>Bài sau →</small>${next.n}. ${next.vi}</a>`:''}</div>`;
+}
+
+function qItem(l,e,i){
+  const id=`q-${l.n}-${i}`;
+  const inner=e.o?`<div class="opts" role="group" aria-labelledby="${id}-t">${e.o.map((o,j)=>`<button type="button" class="opt" data-j="${j}" aria-pressed="false">${o}</button>`).join('')}</div>`
+    :`<input type="text" id="${id}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-labelledby="${id}-t">`;
+  return `<div class="qi" data-i="${i}"><span class="num">${i+1}</span><div><div class="qt" id="${id}-t">${e.q}</div>${inner}</div><div class="fb"></div></div>`;
+}
+
+const norm=s=>s.toLowerCase().replace(/[’‘`]/g,"'").replace(/\s+/g," ").trim().replace(/[.!?]$/,"");
+
+function bindQuiz(l){
+  const f=document.getElementById("quiz");
+  f.querySelectorAll(".opts").forEach(g=>g.addEventListener("click",ev=>{
+    const b=ev.target.closest(".opt"); if(!b) return;
+    g.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+  }));
+  f.addEventListener("submit",ev=>{
+    ev.preventDefault(); let ok=0;
+    f.querySelectorAll(".qi").forEach(q=>{
+      const e=l.ex[+q.dataset.i]; let right=false, ans;
+      if(e.o){const p=q.querySelector('.opt[aria-pressed="true"]'); right=!!p && +p.dataset.j===e.a; ans=e.o[e.a];}
+      else{const v=norm(q.querySelector("input").value); right=e.a.some(a=>norm(a)===v); ans=e.a[0];}
+      q.classList.toggle("ok",right); q.classList.toggle("bad",!right);
+      q.querySelector(".fb").textContent=right?"Đúng rồi!":`Đáp án: ${ans}`;
+      if(right) ok++;
+    });
+    const t=l.ex.length;
+    document.getElementById("score").textContent=`Đúng ${ok}/${t} câu${ok===t?" · Tuyệt vời!":""}`;
+    const prev=best[l.n]?+best[l.n].split("/")[0]:-1;
+    if(ok>prev){best[l.n]=`${ok}/${t}`;store.set("mng1-best",best);renderNav(l.n)}
+  });
+  document.getElementById("reset").addEventListener("click",()=>{
+    f.querySelectorAll(".qi").forEach(q=>{q.classList.remove("ok","bad");q.querySelector(".fb").textContent="";const i=q.querySelector("input");if(i)i.value="";q.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed","false"))});
+    document.getElementById("score").textContent="";
+  });
+}
+
+function route(){
+  const m=(location.hash||"").match(/^#l(\d+)$/);
+  const l=m?L.find(x=>x.n===+m[1]):null;
+  if(l){main.innerHTML=lessonPage(l);bindQuiz(l);renderNav(l.n);store.set("mng1-last",l.n)}
+  else{main.innerHTML=home();renderNav("home")}
+  side.classList.remove("open");tg.setAttribute("aria-expanded","false");
+}
+window.addEventListener("hashchange",()=>{route();window.scrollTo(0,0)});
+route();
+</script>
+
+</body></html>
